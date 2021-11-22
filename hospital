@@ -1,0 +1,259 @@
+import java.time.LocalDate;
+
+public class App {
+    public static void main(String[] args) {
+        Endereco enderecoUm = new Endereco("Travessa não te interessa", "12", "Centro", "São Leopoldo", "RS", "123-0");
+        Endereco enderecoDois = new Endereco("Rua A", "12-B", "Vila Velha", "Vitória", "ES");
+
+        Medico paulo = new Medico("1234-RS", "Paulo Gilberto", LocalDate.of(1978, 04, 22));
+
+        Medico joana = new Medico("1689-RS", "Joana Bitencourt", LocalDate.of(1984, 11, 13));
+
+        paulo.setEndereco(enderecoUm);
+        joana.setEndereco(enderecoDois);
+    }
+public class Endereco {
+    private String rua;
+    private String numero;
+    private String bairro;
+    private String cidade;
+    private String estado;
+    private String cep;
+
+    public Endereco(String rua, String numero, String bairro, String cidade, String estado) {
+        this.rua = rua;
+        this.numero = numero;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+    }
+
+    public Endereco(String rua, String numero, String bairro, String cidade, String estado, String cep) {
+        this.rua = rua;
+        this.numero = numero;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.cep = cep;
+    }
+
+    public String getRua() {
+        return this.rua;
+    }
+
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    public String getNumero() {
+        return this.numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getBairro() {
+        return this.bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCidade() {
+        return this.cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return this.estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getCep() {
+        return this.cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+    
+    public class Internacao {
+    private Medico medicoResponsavel;
+    private Paciente paciente;
+    private LocalDate dataDaInternacao;
+    private LocalDate dataDaAlta;
+    private String observacoes;
+
+    public Internacao(Medico responsavel, Paciente paciente) {
+        this.medicoResponsavel = responsavel;
+        this.paciente = paciente;
+        this.dataDaInternacao = LocalDate.now();
+    }
+
+    public Internacao(Medico responsavel, Paciente paciente, String observacoes) {
+        this.medicoResponsavel = responsavel;
+        this.paciente = paciente;
+        this.observacoes = observacoes;
+    }
+
+    public Internacao(Medico responsavel, Paciente paciente,LocalDate dataDaInternacao) {
+        this.medicoResponsavel = responsavel;
+        this.paciente = paciente;
+        this.dataDaInternacao = dataDaInternacao;
+    }
+
+    public Medico getMedicoResponsavel() {
+        return this.medicoResponsavel;
+    }
+
+    public void setMedicoResponsavel(Medico medicoResponsavel) {
+        this.medicoResponsavel = medicoResponsavel;
+    }
+
+    public Paciente getPaciente() {
+        return this.paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
+    public LocalDate getDataDaInternacao() {
+        return this.dataDaInternacao;
+    }
+
+    public void setDataDaInternacao(LocalDate dataDaInternacao) {
+        this.dataDaInternacao = dataDaInternacao;
+    }
+
+    public LocalDate getDataDaAlta() {
+        return this.dataDaAlta;
+    }
+
+    public void setDataDaAlta(LocalDate dataDaAlta) {
+        this.dataDaAlta = dataDaAlta;
+    }
+
+    public String getObservacoes() {
+        return this.observacoes;
+    }
+
+    public void setObservacoes(String observacoes) {
+        this.observacoes = observacoes;
+    }
+public class Medico {
+    private String crm;
+    private String nome;
+    private LocalDate dataDeNascimento;
+    private String telefoneDeContato;
+    private Endereco endereco;
+
+    public Medico(String crm, String nome, LocalDate dataDeNascimento) {
+        this.crm = crm;
+        this.nome = nome;
+        this.dataDeNascimento = dataDeNascimento;
+    }
+
+    public String getCRM() {
+        return this.crm;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public LocalDate getDataDeNascimento() {
+        return this.dataDeNascimento;
+    }
+
+    public void setDataDeNascimento(LocalDate dataDeNascimento) {
+        this.dataDeNascimento = dataDeNascimento;
+    }
+
+    public String getTelefoneDeContato() {
+        return this.telefoneDeContato;
+    }
+
+    public void setTelefoneDeContato(String telefoneDeContato) {
+        this.telefoneDeContato = telefoneDeContato;
+    }
+
+    public Endereco getEndereco() {
+        return this.endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+public class Paciente {
+    private String nome;
+    private String rg;
+    private String cpf;
+    private String telefone;
+    private Endereco endereco;
+
+    public Paciente(String nome, String rg, String cpf) {
+        this.nome = nome;
+        this.rg = rg;
+        this.cpf = cpf;
+    }
+
+    public Paciente(String nome, String rg) {
+        this.nome = nome;
+        this.rg = rg;
+    }
+
+    public Paciente(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getRg() {
+        return this.rg;
+    }
+
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
+
+    public String getCpf() {
+        return this.cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getTelefone() {
+        return this.telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public Endereco getEndereco() {
+        return this.endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+}
+
