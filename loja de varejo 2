@@ -1,0 +1,104 @@
+import java.time.LocalDate;
+
+public class Cliente {
+    private String nome;
+    private String cpf;
+    private String rg;
+    private String email;
+    private String telefone;
+    private LocalDate dataDeNascimento;
+
+    // Getters
+    public String getNome() {
+        return this.nome;
+    }
+
+    public String getCPF() {
+        return this.cpf;
+    }
+
+    public String getRG() {
+        return this.rg;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public String getTelefone() {
+        return this.telefone;
+    }
+
+    public LocalDate getDataDeNascimento() {
+        return this.dataDeNascimento;
+    }
+
+    // Setters
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+public class Fornecedor {
+    
+}
+import java.time.LocalDate;
+
+public class Produto {
+    private long codigoDeBarra;
+    private String descricao;
+    private float precoUnitario;
+    private short quantidade;
+    private String unidadeDeMedida;
+    private LocalDate dataDeFabricacao;
+    private LocalDate dataDeValidade;
+    private Fornecedor fornecedor;
+
+    // Getters
+    public long getCodigoDeBarra() {
+        return this.codigoDeBarra;
+    }
+
+    public String getDescricao() {
+        return this.descricao;
+    }
+
+    public float getPrecoUnitario() {
+        return this.precoUnitario;
+    }
+
+    public short getQuantidade() {
+        return this.quantidade;
+    }
+
+    public String getUnidadeDeMedida() {
+        return this.unidadeDeMedida;
+    }
+
+    public LocalDate getDataDeFabricacao() {
+        return this.dataDeFabricacao;
+    }
+
+    public LocalDate getDataDeValidade() {
+        return this.dataDeValidade;
+    }
+
+    public Fornecedor getFornecedor() {
+        return this.fornecedor;
+    }
+
+    // Setters
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setQuantidade(short quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public void setPrecoUnitario(float precoUnitario) {
+        this.precoUnitario = precoUnitario;
+    }
+}
